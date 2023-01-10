@@ -4,7 +4,7 @@ import sys
 import random
 import math
 
-BASE_DIR = "/home/random/prac/game/flappy_bird"
+BASE_DIR = os.path.dirname(__file__)
 
 
 class Pipe:
@@ -72,6 +72,8 @@ class Pipe:
     def get_info(self, bird):
         try:
             if len(self.all_pipes) > 0:
+
+
                 # bird_ = [bird.x+bird.bird.width, bird.y+bird.bird.height/2]
                 # pipe1 = [self.all_pipes[0].x, self.all_pipes[0].height]
                 # pipe2 = [self.all_pipes[1].x, self.all_pipes[1].y]
@@ -80,6 +82,8 @@ class Pipe:
                 # pygame.draw.line(self.screen, (153, 0, 0), bird_, pipe2, 2)
                 # print(self.get_distance(pipe1, bird_), self.get_distance(pipe2, bird_))
                 # return [bird.y, self.get_distance(pipe1, bird_), self.get_distance(pipe2, bird_)]
+
+
                 return [bird.y, self.all_pipes[0].height, self.all_pipes[1].y, self.all_pipes[1].x-bird.x]
         except:
             pass

@@ -10,7 +10,7 @@ from pipe import Pipe
 pygame.font.init()
 STAT_FONT = pygame.font.SysFont("comicsans", 50)
 
-BASE_DIR = "/home/random/prac/game/flappy_bird"
+BASE_DIR = os.path.dirname(__file__)
 
 
 #colors

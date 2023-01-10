@@ -1,7 +1,7 @@
 import pygame
 import os
 
-BASE_DIR = "/home/random/prac/game/flappy_bird"
+BASE_DIR = os.path.dirname(__file__)
 
 
 class Background:

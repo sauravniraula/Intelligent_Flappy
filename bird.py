@@ -2,7 +2,7 @@ import pygame
 import sys
 import os
 
-BASE_DIR = "/home/random/prac/game/flappy_bird"
+BASE_DIR = os.path.dirname(__file__)
 
 
 class Bird:
@@ -15,9 +15,9 @@ class Bird:
         self.x = 150
         self.y = 200
         self.old_y = 0
-        self.fall_vel = 3
-        self.jump_vel = 15
-        self.jump_height = 30
+        self.fall_vel = 1
+        self.jump_vel = 1
+        self.jump_height = 40
         self.jump_pressed = False
         self.is_jumping = False
         self.bird = None
@@ -42,13 +42,14 @@ class Bird:
         if self.is_jumping:
             if not self.old_y - self.y >= self.jump_height:
                 self.y -= self.jump_vel
-                self.bird_angle += 20
+                if(self.bird_angle < 30):
+                    self.bird_angle += 0.5
             else:
                 self.is_jumping = False
         else:
             self.y += self.fall_vel
-            if self.bird_angle > -90:
-                self.bird_angle -= .4
+            if self.bird_angle > -30:
+                self.bird_angle -= 0.5
 
 
     def trigger_jump(self):
